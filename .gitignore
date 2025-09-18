@@ -1,3 +1,5 @@
 .vscode
 images
-__pycache__
+__pycache__*.env
+sdrc_navigation/config/gps_wpf_demo.mvc
+sdrc_navigation/config/*.secrets.yaml
