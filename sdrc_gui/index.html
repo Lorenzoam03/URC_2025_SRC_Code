@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HUD MockUp</title>
-  <link rel="stylesheet" href="styles.css"> 
-  <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/eventemitter2@6.4.9/lib/eventemitter2.min.js"></script>
+  <title>Rover Web UI</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- roslib.js from a CDN or local copy -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/eventemitter2@6.4.9/lib/eventemitter2.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
   <script src="script.js"></script>
 </head>
 
-
 <body>
-  <button onclick="onButtonClicked()" class="LED" id="LEDButton">
-    Change LED Status<br />
+  <h1>Rover Dashboard</h1>
+
+  <!-- LED Toggle Button (existing) -->
+  <button id="LEDButton" class="LED">
+    Change LED Status<br>
     Current Status: Off
   </button>
 
-  <img id="camera-image" src="" alt="Image of a a large sandy field with a drone in the shot" />
+  <!-- Teleop Controls -->
+  <div id="teleop-controls">
+    <h2>Teleop Commands</h2>
+    <button onclick="sendVelocity(0.2, 0)">Forward</button>
+    <button onclick="sendVelocity(-0.2, 0)">Reverse</button>
+    <button onclick="sendVelocity(0, 0.5)">Turn Left</button>
+    <button onclick="sendVelocity(0, -0.5)">Turn Right</button>
+    <button onclick="sendVelocity(0, 0)">Stop</button>
+  </div>
 
-  <p id="GNSS">Longitude: 10&#xb0<br>Latitude 15&#xb0<br>Speed: 0m/s</p>
-  <p id="Arm_Data">Arm Team Data</p>
+  <!-- Camera Feed (existing) -->
+  <img id="camera-image" src="" alt="Rover Camera Feed" />
+
+  <!-- Waypoint / GNSS Input -->
+  <div id="waypoint-form">
+    <h2>Send Waypoint</h2>
+    <label for="latInput">Latitude:</label>
+    <input type="text" id="latInput" placeholder="e.g. 35.000">
+    <label for="lonInput">Longitude:</label>
+    <input type="text" id="lonInput" placeholder="e.g. -120.000">
+    <button onclick="sendWaypoint()">Send Waypoint</button>
+  </div>
+
+  <!-- Real-time Status Display -->
+  <div id="status-panel">
+    <h2>Rover Status</h2>
+    <p>Battery Voltage: <span id="batteryVal">N/A</span></p>
+    <p id="GNSS">Longitude: 10°<br>Latitude: 15°<br>Speed: 0 m/s</p>
+    <p id="Arm_Data">Arm Team Data</p>
+  </div>
 </body>
-
 </html>
+
