@@ -10,3 +10,7 @@ log/
 # Secrets
 *.env
 sdrc_navigation/config/gps_wpf_demo.mvc
+build/
+install/
+log/
+sdrc_navigation/config/gps_wpf_demo.mvc
