@@ -1,0 +1,3 @@
+# Do NOT put subscription-key in this file.
+URL_BASE=https://atlas.microsoft.com/map/imagery/png?api-version=1.0&zoom={z}&x={x}&y={y}
+# The subscription key will be appended at runtime.
