@@ -11,6 +11,8 @@ find_package(ament_cmake REQUIRED)
 # Install the Python executable script
 install(PROGRAMS
   scripts/mock_gnss_publisher.py
+  scripts/rtk_gnss_node.py
+  scripts/ntrip_client.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

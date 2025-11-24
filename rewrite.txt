@@ -1,0 +1,1 @@
+regex:subscription-key=[^&\s"]+=>subscription-key=REDACTED
