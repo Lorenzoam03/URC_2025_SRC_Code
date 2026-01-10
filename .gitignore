@@ -1,16 +1,3 @@
 .vscode
 images
-__pycache__*.env
-sdrc_navigation/config/gps_wpf_demo.mvc
-sdrc_navigation/config/*.secrets.yaml
-# Generated stuff – never commit
-build/
-install/
-log/
-# Secrets
-*.env
-sdrc_navigation/config/gps_wpf_demo.mvc
-build/
-install/
-log/
-sdrc_navigation/config/gps_wpf_demo.mvc
+__pycache__
